@@ -1,0 +1,16 @@
+{:deps {com.cognitect/transit-cljs #_{:git/url "https://github.com/cognitect/transit-cljs.git"
+                                    :sha "37e25db4eade6b92c95f1319d93d3447de2ade22"}
+                                   {:mvn/version "0.8.256"}
+        com.breezeehr/hitch2       {:mvn/version "0.3.1-SNAPSHOT"}}
+ :aliases {
+           ;; figwheel cljs dev
+           :fig       {:extra-deps
+                                    {com.bhauman/figwheel-main {:mvn/version "0.1.9"}
+                                     criterium                 {:mvn/version "0.4.4"}}
+                       :extra-paths ["dev-resources" "test" "target" "bench"]}
+           :cljs      {:extra-paths ["test"]
+                       :main-opts   ["-m cljs.main --repl"]}
+           :build     {:main-opts ["-m" "figwheel.main" "-b" "test" "-r"]}
+           :cljs-test {:extra-paths ["dev-resources" "test"]
+                       :extra-deps  {com.bhauman/figwheel-main {:mvn/version "0.1.9"}}
+                       :main-opts   ["-m" "figwheel.main" "-co" "test.cljs.edn" "-m" hitch2.transit.test-runner]}}}
