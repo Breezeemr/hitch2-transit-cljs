@@ -1,8 +1,7 @@
 {:deps {com.cognitect/transit-cljs #_{:git/url "https://github.com/cognitect/transit-cljs.git"
                                     :sha "37e25db4eade6b92c95f1319d93d3447de2ade22"}
                                    {:mvn/version "0.8.256"}
-        com.clojure/clojurescript  {:mvn/version "1.10.339"}
-        com.breezeehr/hitch2       {:mvn/version "0.3.2-SNAPSHOT"}}
+        com.breezeehr/hitch2              {:local/root "../hitch2"}}
  :aliases {
            ;; figwheel cljs dev
            :fig       {:extra-deps
